@@ -23,8 +23,6 @@ bodies = [ "best handyman of all time", "couldn't get her to call me back", "the
                 worker_id: worker.id
                 )
 
-           
-
                 2.times do
                 Comment.create(
                     date: Faker::Date.between(from: '2018-09-23', to: '2021-06-18'),
