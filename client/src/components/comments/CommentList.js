@@ -1,7 +1,7 @@
 import Comment from './Comment';
-const CommentList = ({ serviceId, comments, updateComment, deleteComment }) => {
+const CommentList = ({ serviceId, comments, updateComment, deleteComment }) => (
     // console.log("CommentList", comments)
-    return (
+    
         <>
         { comments.map( c =>
             <Comment {...c} updateComment={updateComment} deleteComment={deleteComment} />
@@ -12,7 +12,7 @@ const CommentList = ({ serviceId, comments, updateComment, deleteComment }) => {
 
 
 
-    }
+    
 
 
 export default CommentList;
