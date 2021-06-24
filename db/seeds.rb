@@ -9,7 +9,7 @@ availabilities= ['no wait', 'a couple of weeks', 'booked out for months']
 bodies = [ "best handyman of all time", "couldn't get her to call me back", "the crown molding job was super", "don't expect this work to be cheap", "he stole all my tools", "this guy brought me lunch and fixed my oven", "She swept up and planted my garden too", "too rude to deal with"]
 5.times do 
     worker = Worker.create(
-        name: Faker::Name.name,
+        fullname: Faker::Name.name,
         email: Faker::Internet.email,
         phone: Faker::PhoneNumber.phone_number,
         location: Faker::Address.city,
@@ -25,7 +25,6 @@ bodies = [ "best handyman of all time", "couldn't get her to call me back", "the
 
                 2.times do
                 Comment.create(
-                    date: Faker::Date.between(from: '2018-09-23', to: '2021-06-18'),
                     title: Faker::Book.title,
                     body: bodies.sample,
                     service_id: service.id

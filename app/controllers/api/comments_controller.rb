@@ -1,11 +1,15 @@
 class Api::CommentsController < ApplicationController
 
     before_action :set_service
-    before_action :set_comment, only: [:update, :destroy]
+    before_action :set_comment, only: [:show, :update, :destroy]
 
 
     def index
         render json: @service.comments
+    end
+
+    def show 
+        render json: @comment
     end
 
     def create
@@ -32,7 +36,7 @@ class Api::CommentsController < ApplicationController
 
     private
     def comment_params
-        params.require(:comment).permit(:date, :title, :body)
+        params.require(:comment).permit(:title, :body)
     end
 
     def set_service
@@ -40,7 +44,11 @@ class Api::CommentsController < ApplicationController
     end
     
     def set_comment
-        @comment = Comment.find(params[:id])
+        @comment = @service.comments.find(params[:id])
     end
 
 end
+
+# t.date "date"
+# t.string "title"
+# t.text "body"

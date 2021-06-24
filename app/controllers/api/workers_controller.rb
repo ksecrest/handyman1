@@ -38,6 +38,12 @@ class Api::WorkersController < ApplicationController
     end
 
     def worker_params
-        params.require(:worker).permit(:name, :email, :phone, :location, :experience)
+        params.require(:worker).permit(:fullname, :email, :phone, :location, :experience)
     end
 end
+
+# fullname"
+#     t.string "email"
+#     t.string "phone"
+#     t.string "location"
+#     t.integer "experience"
