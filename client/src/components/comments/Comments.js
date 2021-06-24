@@ -28,13 +28,9 @@ const Comments = ({ serviceId }) => {
   const updateComment = (id, comment) => {
     axios.put(`/api/services/${serviceId}/comments/${id}`, { comment } )
       .then( res => {
-        const updatedComments = comment.map( c => {
-          if (c.id === id) {
-            return res.data
-          }
-          return c
-        })
-        setComments(updatedComments)
+      let updatedComments = comments.maps(c => c.id !== id? c : res.data)
+       setComments(updatedComments)
+        
       }).catch( err => console.log(err))
   }
 
@@ -50,7 +46,7 @@ const Comments = ({ serviceId }) => {
   return (
     <>
       <h1>Comment</h1>
-      <CommentForm addComment={addComment} />
+      <CommentForm addComment={addComment} up />
       <CommentList 
         serviceId={serviceId} 
         comments={comments} 

@@ -36,7 +36,7 @@ class Api::CommentsController < ApplicationController
 
     private
     def comment_params
-        params.require(:comment).permit(:title, :body)
+        params.require(:comment).permit(:title, :body, :service_id, :id, :created_at, :updated_at)
     end
 
     def set_service
@@ -52,3 +52,4 @@ end
 # t.date "date"
 # t.string "title"
 # t.text "body"
+# Unpermitted parameters: :service_id, :id, :created_at, :updated_at

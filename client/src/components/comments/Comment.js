@@ -1,7 +1,10 @@
-
+import { useState } from 'react';
 import { Card } from 'semantic-ui-react';
+import CommentForm from './CommentForm';
+
 
 const Comment = ( { id, title, body, service_id, updateComment, deleteComment }) => {
+    const [ toggle, setToggle ] = useState(false)
     return (
         <>
 <Card>
@@ -10,8 +13,10 @@ const Comment = ( { id, title, body, service_id, updateComment, deleteComment })
         <Card.Description>{body}</Card.Description>
         </Card.Content>
         </Card>
-        <button onClick={ () => updateComment(id) }>Update Comment</button>
+
+        <button onClick={ () => setToggle(!toggle) }>Update Comment</button>
         <button onClick={ () => deleteComment(id) }>Delete Comment</button>
+        { toggle && <CommentForm updateComment={updateComment} id={id} title={title} body={body} service_id={service_id} />}
         </>
     )
 }

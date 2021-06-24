@@ -21,7 +21,7 @@ const NavBar = () => {
                     Service Providers
                 </Menu.Item>
             </Link>
-            <Icon name='sign language' size='large'   />
+            <Icon name='wrench' size='big' />   
         </Menu>
     
     )
