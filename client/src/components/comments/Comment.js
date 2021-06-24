@@ -4,6 +4,7 @@ import { Card } from 'semantic-ui-react';
 const Comment = ( { id, title, body, service_id, updateComment, deleteComment }) => {
     return (
         <>
+<p>Hi there</p>
 <Card>
     <Card.Content>
         <Card.Header>{title}</Card.Header>

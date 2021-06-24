@@ -10,6 +10,7 @@ const Comments = ({ serviceId }) => {
     axios.get(`/api/services/${serviceId}/comments`)
       .then( res => {
         setComments(res.data)
+        console.log(res.data)
       })
       .catch( err => console.log(err))
   }, [])
